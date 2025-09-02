@@ -1,0 +1,36 @@
+<html>
+    <body>
+        <div id="title">
+            <h1>welcome to my webpage</h1>
+            <p>this is where dreams come true</p>
+            <button onclick="makedream()">make dreams</button>
+        </div>
+    </body>
+    
+</html>
+
+<style>
+    body{
+        background-image: url("https://kenkoimagingusa.com/cdn/shop/articles/Simple_Landscape_Photography_Tips_With_Tons_of_Impact_79f3d1b6-addd-4420-a887-f1cc50292373.jpg?v=1570491211");
+        background-size: cover;
+    }
+    h1{
+        color: blue;
+    }
+    button:hover{
+        background-color: red;
+        cursor: pointer;
+        font-size: 20px;
+    }
+    #title{
+        text-align: center;
+        width: 100%;
+        margin-top: 50px;
+    }
+</style>
+<script>
+    function makedream(){
+        document.body.style.background= 'URL("https://media.tenor.com/nANqORN7qhQAAAAM/explosion-explode.gif")';
+document.getElementById("title").style.visibility="hidden";
+    }
+</script>
