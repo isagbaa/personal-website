@@ -1,1 +1,1 @@
-print("hello from oge python")
+print("hello from org python")
