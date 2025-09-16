@@ -8,4 +8,7 @@ button:hover{
 }
 #title{
 text-align: center;
+background-image: url('../images/jean-philippe-delberghe-9XAnXWHu9_4-unsplash.jpg');
+background-size: cover;
+background-position: center top;
 }
