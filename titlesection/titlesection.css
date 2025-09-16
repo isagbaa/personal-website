@@ -1,14 +1,21 @@
-h1{
-color: blue;
-}
-button:hover{
-    background-color: rgb(30, 211, 13);
-    cursor: pointer;
-    font-size: 20px;
+:root{
+    --titlesectionprrimarycolor:white;
 }
 #title{
 text-align: center;
 background-image: url('../images/jean-philippe-delberghe-9XAnXWHu9_4-unsplash.jpg');
 background-size: cover;
 background-position: center top;
+color: var(--titlesectionprrimarycolor);
+}
+.title-section-button{
+color: var(--titlesectionprrimarycolor);
+background-color: transparent;
+border: solid var(--titlesectionprrimarycolor) 1px;
+padding: 15px,20px;
+border-radius: 10px;
+}
+button:hover{
+    background-color: rgb(30, 211, 13);
+    cursor: pointer;
 }
