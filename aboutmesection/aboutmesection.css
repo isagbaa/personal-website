@@ -1,0 +1,11 @@
+#aboutme{
+    text-align: center;
+}
+.text-block-container{
+width: 65%;
+border: solid black;
+margin: 0 auto;
+}
+.about-me-section-description{
+    text-align: justify;
+}

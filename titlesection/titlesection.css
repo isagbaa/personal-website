@@ -28,3 +28,7 @@ border-radius: 10px;
 .title-section-subtitle{
     margin-bottom: 40px;
 }
+.misc-section{
+    width: 100vw;
+    padding: 100px 25px;
+}
