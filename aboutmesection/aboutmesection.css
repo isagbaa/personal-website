@@ -3,9 +3,13 @@
 }
 .text-block-container{
 width: 65%;
-border: solid black;
 margin: 0 auto;
 }
 .about-me-section-description{
     text-align: justify;
+}
+@media screen and (max-width: 500px){
+    .text-block-container{
+        width: 100%;
+    }
 }
