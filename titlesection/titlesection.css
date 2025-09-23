@@ -1,5 +1,7 @@
 :root{
-    --titlesectionprrimarycolor:white;
+    --titlesectionprrimarycolor: rgb(255, 255, 255);
+    --titlesectionsecondarycolor: rgba(169, 37, 45);
+
 }
 #title{
 text-align: center;
@@ -15,7 +17,14 @@ border: solid var(--titlesectionprrimarycolor) 1px;
 padding: 15px,20px;
 border-radius: 10px;
 }
-button:hover{
-    background-color: rgb(30, 211, 13);
+.title-section-button:hover{
+    background-color: var(--titlesectionprrimarycolor);
+    color: var(--titlesectionsecondarycolor);
     cursor: pointer;
+}
+.title-section-header{
+    margin-bottom: 2px;
+}
+.title-section-subtitle{
+    margin-bottom: 40px;
 }
