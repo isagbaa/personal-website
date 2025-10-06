@@ -13,3 +13,14 @@ margin: 0 auto;
         width: 100%;
     }
 }
+.about-icons{
+    font-size: 40px;
+    margin-top: 45px;
+}
+.abouticon{
+    color: var(--titlesectionsecondarycolor);
+}
+.abouticon:hover{
+    font-size: 55px;
+    cursor: pointer;
+}
