@@ -5,7 +5,7 @@
 }
 #title{
 text-align: center;
-background-image: url('../images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg');
+background-image: url('../images/jean-philippe-delberghe-9XAnXWHu9_4-unsplash.jpg');
 background-size: cover;
 background-position: center top;
 color: var(--titlesectionprrimarycolor);
@@ -25,9 +25,8 @@ border-radius: 10px;
 .title-section-header{
     margin-bottom: 2px;
 }
-.blend-text,.title-section-subtitle{
+.title-section-subtitle{
     margin-bottom: 40px;
-    font-weight: bold;
 }
 .misc-section{
     width: 100vw;
