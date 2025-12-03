@@ -33,7 +33,16 @@
         <div class="main-section" id="craps-game">
             <h1 class="craps-game-title">Craps Casino Game </h1>
              <div class="craps-game-container">
-
+               <div class="craps-game-registration">
+                <div>Enter Username 
+                <div>
+                <input class="craps-game-input-reg" type="text" id="craps-game-input-id" >
+                </div>
+                    <div>
+                    <button class="craps-game-button" onclick="registercrapsplayer()">Enter</button>
+                    </div>
+                </div>
+               </div>
              </div>
         </div>
     </body>
@@ -63,5 +72,8 @@ padding: 0px;
     function makedream(){
         document.body.style.background= 'URL("https://media.tenor.com/nANqORN7qhQAAAAM/explosion-explode.gif")';
 document.getElementById("title").style.visibility="hidden";
+    }
+    function registercrapsplayer(){
+   let crapsusername =   document.getElementById("craps-game-input-id").value;
     }
 </script>

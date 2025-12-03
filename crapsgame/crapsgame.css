@@ -16,3 +16,28 @@
     background-size: cover;
     background-position: center ;
 }
+.craps-game-registration{
+ margin-top: 25px;
+    text-align: center;
+}
+.craps-game-input-reg{
+    background: none;
+    border: none;
+    border-bottom: solid white 1px;
+    color: white;
+    margin-top: 25px;
+    text-align: center;
+}
+.craps-game-input-reg:focus{
+    outline: none;
+}
+.craps-game-button{
+    margin-top: 55px;
+
+    border-radius: 5px;
+}
+.craps-game-button:hover{
+    background-color: white;
+    color: rgb(169, 37, 45);
+    cursor: pointer;
+}
