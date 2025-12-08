@@ -16,7 +16,7 @@
     background-size: cover;
     background-position: center ;
 }
-.craps-game-registration{
+ #craps-game-registration{ 
  margin-top: 25px;
     text-align: center;
 }
@@ -40,4 +40,8 @@
     background-color: white;
     color: rgb(169, 37, 45);
     cursor: pointer;
+}
+#craps-game-main-section{
+    display: none;
+   
 }
