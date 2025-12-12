@@ -39,13 +39,20 @@
                 <input class="craps-game-input-reg" type="text" id="craps-game-input-id" >
                 </div>
                     <div>
-                    <button class="craps-game-button" onclick="registercrapsplayer()">Enter</button>
+                    <button class="craps-game-button" onclick="registercrapsplayer()">Continue</button>
                     </div>
                 </div>
                </div>
                <div id="craps-game-main-section">
-                <!-- main game section will be shown here after registration -->
-                MAIN GAME SECTION
+                <div class="craps-game-main-section-stats">
+
+                <div>Welcome,<span id ="craps-stats-user"></span></div>
+
+                <div id ="craps-stats-money">$<span id ="craps-stats-money-value"></span></div>
+
+                <div>Rounds: <span id ="craps-stats-rounds"></span></div>
+                </div>
+                
              </div>
              </div>
              
@@ -73,7 +80,7 @@ padding: 0px;
 
    }
 </style>
-<script src="./crapsgame/crapsgame.js"></script>
+ <script src="./crapsgame/crapsgame.js"></script>
 <script>
     function makedream(){
         document.body.style.background= 'URL("https://media.tenor.com/nANqORN7qhQAAAAM/explosion-explode.gif")';

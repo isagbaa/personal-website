@@ -1,8 +1,17 @@
+ //craps main data 
+ let crapsusername = "";
+ //craps game settings 
+ const startingmoney = 1000;
+ const startingrounds = 0;
+ //html element ids
  const crapsgameinputid = "craps-game-input-id";
  const crapsgameregistration = "craps-game-registration";
  const crapsgamemainsection = "craps-game-main-section";
+ const crapsstatsuser="craps-stats-user";
+ const crapsstatsmoneyvalue="craps-stats-money-value";
+ const crapsstatsrounds="craps-stats-rounds";
  function registercrapsplayer(){
-   let crapsusername =   document.getElementById(crapsgameinputid).value
+  crapsusername = document.getElementById(crapsgameinputid).value.trim();
    
   
   
@@ -12,6 +21,8 @@
     else{
        removeregistrationpane()
         showmaingamesection()
+
+      setupfirstround()
    }
    
 
@@ -22,3 +33,15 @@
     function showmaingamesection(){
       document.getElementById(crapsgamemainsection).style.display="block"
     }
+    function setupfirstround(){
+      // Simple, safe display of username as plain text
+      document.getElementById(crapsstatsuser).innerHTML = ' ' + crapsusername;
+      setmoneyvalue(startingmoney);
+      setroundsvalue(startingrounds);
+    }
+    function setmoneyvalue(money){
+      document.getElementById(crapsstatsmoneyvalue).innerHTML = money;
+    }
+    function setroundsvalue(rounds){
+      document.getElementById(crapsstatsrounds).innerHTML = rounds;
+    } 

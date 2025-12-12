@@ -45,3 +45,11 @@
     display: none;
    
 }
+.craps-game-main-section-stats{
+    text-align: center;
+    margin-top: 70px;
+}
+#craps-stats-money{
+    font-size: 30px;
+    margin: 25px 0 5px 0;
+}
