@@ -26,25 +26,24 @@
     background-position: center ;
 }
  #craps-game-registration{ 
- margin-top: 25px;
-    text-align: center;
+ margin-top: calc(var(--height-scale) * 0.15);
+ font-size: calc(var(--game-title-size) * 0.5);
+text-align: center;
+
 }
 .craps-game-input-reg{
     background: none;
     border: none;
     border-bottom: solid white 1px;
     color: white;
-    margin-top: 25px;
+    margin: calc(var(--height-scale) * 0.055) 0;
     text-align: center;
+    font-size: calc(var(--game-title-size) * 0.5);
 }
 .craps-game-input-reg:focus{
     outline: none;
 }
-.craps-game-button{
-    margin-top: 55px;
 
-    border-radius: 5px;
-}
 .craps-game-button:hover{
     background-color: white;
     color: rgb(169, 37, 45);
@@ -55,10 +54,11 @@
    
 }
 .craps-game-main-section-stats{
+    font-size:calc(var(--height-scale) * 0.05);
     text-align: center;
-    margin-top: 70px;
+    margin-top :calc(var(--height-scale) * 0.15);
 }
 #craps-stats-money{
-    font-size: 30px;
-    margin: 25px 0 5px 0;
+    font-size:calc(var(--height-scale) * 0.12);
+    margin-top :calc(var(--height-scale) * 0.04); 
 }
