@@ -3,6 +3,10 @@
  //craps game settings 
  const startingmoney = 1000;
  const startingrounds = 0;
+ const bets ={
+  even : "EVEN",
+  odd : "ODD"
+ }
  //html element ids
  const crapsgameinputid = "craps-game-input-id";
  const crapsgameregistration = "craps-game-registration";
@@ -13,12 +17,13 @@
  //in game variables
  let currentrounds = startingrounds;
 let currentmoney = startingmoney;
+let currentbet = bets.even;
  function registercrapsplayer(){
   crapsusername = document.getElementById(crapsgameinputid).value.trim();
    
   
   
-   if (/^[0-9]/.test(crapsusername) ||  /^[_.]/.test(crapsusername) || crapsusername.length <= 5 || /\s/.test(crapsusername) || /[^a-zA-Z0-9_.]/.test(crapsusername)) {
+   if (/^[0-9]/.test(crapsusername) ||  /^[_.]/.test(crapsusername) || crapsusername.length < 5 || /\s/.test(crapsusername) || /[^a-zA-Z0-9_.]/.test(crapsusername)) {
     alert("username must be more than 5 characters long, alphanumeric with underscore and dot only, cannot start with a digit or special symbol, no spaces allowed");
     }
     else{
@@ -43,6 +48,7 @@ let currentmoney = startingmoney;
       currentrounds = startingrounds
       setmoneyvalue(currentmoney);
       setroundsvalue(currentrounds);
+      beteven();
     }
     function setmoneyvalue(money){
       document.getElementById(crapsstatsmoneyvalue).innerHTML = money;
@@ -50,3 +56,15 @@ let currentmoney = startingmoney;
     function setroundsvalue(rounds){
       document.getElementById(crapsstatsrounds).innerHTML = rounds;
     } 
+    function beteven(){
+      choosebet(bets.even);
+    }
+     function betodd(){
+      choosebet(bets.odd);
+    }
+    function choosebet(bet){
+      currentbet = bet;
+       document.getElementById(bet).style.backgroundColor= "red";
+       const deselectBet = bet === bets.even ? bets.odd : bets.even;
+        document.getElementById(deselectBet).style.backgroundColor= "transparent";
+    }
