@@ -7,6 +7,7 @@
   even : "EVEN",
   odd : "ODD"
  }
+ const minimumbet = 50;
  //html element ids
  const crapsgameinputid = "craps-game-input-id";
  const crapsgameregistration = "craps-game-registration";
@@ -14,10 +15,12 @@
  const crapsstatsuser="craps-stats-user";
  const crapsstatsmoneyvalue="craps-stats-money-value";
  const crapsstatsrounds="craps-stats-rounds";
+ const crapsuserbetamount="craps-user-bet-amount";
  //in game variables
  let currentrounds = startingrounds;
 let currentmoney = startingmoney;
 let currentbet = bets.even;
+let currentbetamount = minimumbet;
  function registercrapsplayer(){
   crapsusername = document.getElementById(crapsgameinputid).value.trim();
    
@@ -49,6 +52,7 @@ let currentbet = bets.even;
       setmoneyvalue(currentmoney);
       setroundsvalue(currentrounds);
       beteven();
+      setbetamount(minimumbet);
     }
     function setmoneyvalue(money){
       document.getElementById(crapsstatsmoneyvalue).innerHTML = money;
@@ -67,4 +71,14 @@ let currentbet = bets.even;
        document.getElementById(bet).style.backgroundColor= "red";
        const deselectBet = bet === bets.even ? bets.odd : bets.even;
         document.getElementById(deselectBet).style.backgroundColor= "transparent";
+    }
+    function increasebetamount(){
+setbetamount(Math.min(currentbetamount + minimumbet, currentmoney));
+    }
+    function decreasebetamount(){
+setbetamount(Math.max(currentbetamount - minimumbet, minimumbet));
+    }
+    function setbetamount(betamount){
+      currentbetamount = betamount;
+      document.getElementById(crapsuserbetamount).innerHTML = "$" + betamount;
     }
