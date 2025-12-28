@@ -7,7 +7,7 @@
   even : "EVEN",
   odd : "ODD"
  }
- const minimumbet = 50;
+ const minimumbet = 100;
  //html element ids
  const crapsgameinputid = "craps-game-input-id";
  const crapsgameregistration = "craps-game-registration";
