@@ -98,7 +98,11 @@ text-align: center;
     cursor: pointer;
    transform: scale(1.1);
 }
+#craps-roll-dice-animation-container{
+margin-top:calc(var(--height-scale) * -0.5); 
+margin-left:calc(var(--height-scale) * -0.17); 
 
+}
 .craps-betting-grid{
     display: grid;
     grid-template-columns: 33% auto 33%;
@@ -170,18 +174,7 @@ cursor: pointer;
 
     
 
-    #craps-roll-dice-animation-container{
-        position: static;
-        width: 100%;
-        transform: none;
-        margin: 0.6rem auto;
-        background: transparent;
-        padding: 0;
-        box-shadow: none;
-        pointer-events: auto;
-        z-index: auto;
-    }
-
+    
     .craps-round-manager{
         position: static; /* allow it to flow after content instead of overlapping */
         margin-top: 0.5rem;
@@ -191,6 +184,26 @@ cursor: pointer;
     .craps-bet-button, .craps-bet-amount-container{
         padding: 0.6rem;
     }
+    
+    /* Prevent dice animation from overlapping the betting grid on small screens
+       and push it further down so it clears stacked controls */
+    #craps-roll-dice-animation-container{
+        margin-top: 2rem; /* push animation down on phones */
+        margin-left: 0; /* remove negative offset */
+        position: relative; /* allow it to flow with document */
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+        z-index: 1;
+    }
+
+    .craps-roll-dice-container{
+        max-width: 100%;
+        margin: 0 auto;
+        transform: none; /* avoid hover-scaling pushing layout on touch */
+    }
+
 }
 
  #craps-game-registration{ 
@@ -346,56 +359,6 @@ text-align: center;
 
 /* Container that will hold the roll-a-die animation */
 /* Container that will hold the roll-a-die animation */
-#craps-roll-dice-animation-container{
-    /* position as an overlay centered inside the game container so
-       the animation covers the betting grid when active */
-    position: absolute;
-    top: 48%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: min(78%, 480px);
-    max-width: 90%;
-    height: auto;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: visible; /* allow animation to extend and cover grid */
-    z-index: 80; /* sit above controls */
-    pointer-events: none; /* avoid blocking clicks when showing */
-    background: rgba(0,0,0,0.28); /* subtle dim behind animation */
-    padding: 0.6rem;
-    border-radius: 8px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
-}
-
-/* If roll-a-die creates a canvas or svg inside, make it responsive */
-#craps-roll-dice-animation-container > * {
-    max-width: 100%;
-    height: auto !important;
-    width: 100% !important;
-}
-
-/* Nudge the two dice visuals closer together.
-   Targets common element types produced by roll-a-die (SVG, canvas or die wrappers).
-   Uses small negative horizontal margins so the two dice appear tighter without
-   changing their internal rendering. */
-#craps-roll-dice-animation-container > *,
-#craps-roll-dice-animation-container > svg,
-#craps-roll-dice-animation-container > canvas,
-#craps-roll-dice-animation-container > .die,
-#craps-roll-dice-animation-container > .rad-die,
-#craps-roll-dice-animation-container > .roll-a-die {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 -16px; /* stronger negative horizontal margin to reduce spacing */
-    transition: margin 120ms ease;
-}
-
-/* Slightly reduce overlap so faces don't visually collide too much */
-#craps-roll-dice-animation-container > *:first-child { margin-right: -12px; }
-#craps-roll-dice-animation-container > *:last-child  { margin-left: -12px; }
-
 .craps-betting-grid{
     display: grid;
     /* fixed center column so amounts do not expand grid width */
