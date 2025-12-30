@@ -98,7 +98,7 @@ currentbetamount = betamount;
       document.getElementById(crapsrollbutton).style.display="none"
       const dicerollelement = document.getElementById(crapsrolldiceanimationcontainer);
         // create the roll animation (library will insert its DOM into the container)
-        rollADie({ element: dicerollelement, numberOfDice: 2, callback: processdiceresult , delay : 100000});
+        rollADie({ element: dicerollelement, numberOfDice: 2, callback: delayeddiceprocessingresult , delay : 100000});
        
         //requestAnimationFrame(() => setTimeout(adjustDiceLayout, 10000000));
     }
@@ -111,6 +111,9 @@ document.addEventListener("resize", formatdicescale);
       alert(heightscale)
       const scale = heightscale / 494.6592; 
       document.getElementById(crapsrolldiceanimationcontainer).style.transform = "scale(" + scale + ")";
+    }
+    function delayeddiceprocessingresult(diceresult){
+      setTimeout( function() {processdiceresult(diceresult);}, 1000);
     }
     function processdiceresult(diceresult){
 //currentbet=useres bet
