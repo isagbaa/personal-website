@@ -92,7 +92,7 @@ setbetamount(Math.max(currentbetamount - minimumbet, minimumbet));
        
         //requestAnimationFrame(() => setTimeout(adjustDiceLayout, 10000000));
     }
-
+document.addEventListener("resize", formatdicescale);
     function formatdicescale(){
       const vw = window.innerWidth * 0.8;
       const vh = window.innerHeight * 0.8;
