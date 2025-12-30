@@ -94,12 +94,13 @@ setbetamount(Math.max(currentbetamount - minimumbet, minimumbet));
     }
 
     function formatdicescale(){
-      const vw = window.innerWidth * 0.7;
-      const vh = window.innerHeight * 0.7;
-      const widthscale = math.min(600,vw,vh )
-      const heightscale = widthscale * 0.5;
+      const vw = window.innerWidth * 0.8;
+      const vh = window.innerHeight * 0.8;
+      const widthscale = Math.min(700,vw,vh );
+      const heightscale = widthscale * 0.714;
       alert(heightscale)
-      const scale = heightscale / 150;
+      const scale = heightscale / 494.6592; 
+      document.getElementById(crapsrolldiceanimationcontainer).style.transform = "scale(" + scale + ")";
     }
     function processdiceresult(diceresult){
 console.log(diceresult);
