@@ -23,6 +23,7 @@
 let currentmoney = startingmoney;
 let currentbet = bets.even;
 let currentbetamount = minimumbet;
+let canchangebet = true;
  function registercrapsplayer(){
   crapsusername = document.getElementById(crapsgameinputid).value.trim();
    
@@ -49,17 +50,19 @@ let currentbetamount = minimumbet;
     function setupfirstround(){
       // Simple, safe display of username as plain text
       document.getElementById(crapsstatsuser).innerHTML = ' ' + crapsusername;
-      currentmoney = startingmoney
-      currentrounds = startingrounds
-      setmoneyvalue(currentmoney);
-      setroundsvalue(currentrounds);
+      
+      
+      setmoneyvalue(startingmoney);
+      setroundsvalue(startingrounds);
       beteven();
       setbetamount(minimumbet);
     }
     function setmoneyvalue(money){
+      currentmoney = money;
       document.getElementById(crapsstatsmoneyvalue).innerHTML = money;
     }
     function setroundsvalue(rounds){
+      currentrounds = rounds;
       document.getElementById(crapsstatsrounds).innerHTML = rounds;
     } 
     function beteven(){
@@ -69,10 +72,13 @@ let currentbetamount = minimumbet;
       choosebet(bets.odd);
     }
     function choosebet(bet){
-      currentbet = bet;
+      if (canchangebet){
+currentbet = bet;
        document.getElementById(bet).style.backgroundColor= "red";
        const deselectBet = bet === bets.even ? bets.odd : bets.even;
         document.getElementById(deselectBet).style.backgroundColor= "transparent";
+      }
+      
     }
     function increasebetamount(){
 setbetamount(Math.min(currentbetamount + minimumbet, currentmoney));
@@ -81,10 +87,14 @@ setbetamount(Math.min(currentbetamount + minimumbet, currentmoney));
 setbetamount(Math.max(currentbetamount - minimumbet, minimumbet));
     }
     function setbetamount(betamount){
-      currentbetamount = betamount;
+      if (canchangebet){
+currentbetamount = betamount;
       document.getElementById(crapsuserbetamount).innerHTML = "$" + betamount;
+      }
+      
     }
     function rolldice(){
+      canchangebet = false;
       document.getElementById(crapsrollbutton).style.display="none"
       const dicerollelement = document.getElementById(crapsrolldiceanimationcontainer);
         // create the roll animation (library will insert its DOM into the container)
@@ -103,10 +113,27 @@ document.addEventListener("resize", formatdicescale);
       document.getElementById(crapsrolldiceanimationcontainer).style.transform = "scale(" + scale + ")";
     }
     function processdiceresult(diceresult){
-console.log(diceresult);
+//currentbet=useres bet
+//[2,4]
+const sum = diceresult.reduce((partialsum , a) => partialsum + a, 0);
+
+if (sum % 2 === 1 ){
+  diceresult = bets.odd;
     }
-
-
+   setroundsvalue(currentrounds + 1);
+    if (diceresult === currentbet){
+      //win
+      
+      
+      setmoneyvalue(currentmoney + currentbetamount);
+    }
+    else{
+      //lose
+      
+      
+      setmoneyvalue(currentmoney - currentbetamount);
+    }
+  }
 
 
 
