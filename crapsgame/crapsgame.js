@@ -18,7 +18,8 @@
  const crapsuserbetamount="craps-user-bet-amount";
  const crapsrollbutton="craps-roll-button"
  const crapsrolldiceanimationcontainer="craps-roll-dice-animation-container"
- //in game variables
+ const crapsbettinggridcontainer="craps-betting-grid-conatiner";
+ const crapsroundfinishgridcontainer="craps-round-finish-grid-conatiner";
  let currentrounds = startingrounds;
 let currentmoney = startingmoney;
 let currentbet = bets.even;
@@ -49,6 +50,7 @@ let canchangebet = true;
     }
     function setupfirstround(){
       // Simple, safe display of username as plain text
+      document.getElementById(crapsroundfinishgridcontainer).style.display="none"
       document.getElementById(crapsstatsuser).innerHTML = ' ' + crapsusername;
       
       
@@ -113,7 +115,7 @@ document.addEventListener("resize", formatdicescale);
       document.getElementById(crapsrolldiceanimationcontainer).style.transform = "scale(" + scale + ")";
     }
     function delayeddiceprocessingresult(diceresult){
-      setTimeout( function() {processdiceresult(diceresult);}, 1000);
+      setTimeout( function() {processdiceresult(diceresult);}, 1800);
     }
     function processdiceresult(diceresult){
 //currentbet=useres bet
@@ -136,6 +138,8 @@ if (sum % 2 === 1 ){
       
       setmoneyvalue(currentmoney - currentbetamount);
     }
+     document.getElementById(crapsbettinggridcontainer).style.display="none"
+     document.getElementById(crapsroundfinishgridcontainer).style.display="block"
   }
 
 
