@@ -20,6 +20,7 @@
  const crapsrolldiceanimationcontainer="craps-roll-dice-animation-container"
  const crapsbettinggridcontainer="craps-betting-grid-conatiner";
  const crapsroundfinishgridcontainer="craps-round-finish-grid-conatiner";
+ const crapsroundfinishmessage="craps-round-finish-message";
  let currentrounds = startingrounds;
 let currentmoney = startingmoney;
 let currentbet = bets.even;
@@ -125,21 +126,23 @@ const sum = diceresult.reduce((partialsum , a) => partialsum + a, 0);
 if (sum % 2 === 1 ){
   diceresult = bets.odd;
     }
-   setroundsvalue(currentrounds + 1);
-    if (diceresult === currentbet){
-      //win
-      
-      
-      setmoneyvalue(currentmoney + currentbetamount);
-    }
-    else{
-      //lose
-      
-      
+   setroundsvalue(currentrounds + 1)
+   let roundfinishmessage = ""
+    if (diceresult !== currentbet){
+      roundfinishmessage = "YOU LOSE"      
       setmoneyvalue(currentmoney - currentbetamount);
     }
+    else{
+     roundfinishmessage = "YOU WIN"      
+      setmoneyvalue(currentmoney + currentbetamount);
+    }
+    if (currentmoney === 0){
+    roundfinishmessage = "YOU ARE OUT"
+    }
+
      document.getElementById(crapsbettinggridcontainer).style.display="none"
      document.getElementById(crapsroundfinishgridcontainer).style.display="block"
+     document.getElementById(crapsroundfinishmessage).innerHTML = roundfinishmessage
   }
 
 
