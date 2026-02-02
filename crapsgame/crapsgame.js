@@ -46,14 +46,25 @@ let canchangebet = true;
     function removeregistrationpane(){
         document.getElementById(crapsgameregistration).style.display="none"
     }
+    function showegistrationpane(){
+        document.getElementById(crapsgameregistration).style.display="block"
+    }
     function showmaingamesection(){
       document.getElementById(crapsgamemainsection).style.display="block"
     }
+     function hidemaingamesection(){
+      document.getElementById(crapsgamemainsection).style.display="none"
+    }
+   
     function setupfirstround(){
       // Simple, safe display of username as plain text
-      document.getElementById(crapsroundfinishgridcontainer).style.display="none"
-      document.getElementById(crapsstatsuser).innerHTML = ' ' + crapsusername;
       
+      document.getElementById(crapsrolldiceanimationcontainer).style.display="none"
+      document.getElementById(crapsroundfinishgridcontainer).style.display="none"
+      document.getElementById(crapsrollbutton).style.display="block"
+      document.getElementById(crapsbettinggridcontainer).style.display="block"
+      document.getElementById(crapsstatsuser).innerHTML = ' ' + crapsusername;
+      canchangebet = true;
       
       setmoneyvalue(startingmoney);
       setroundsvalue(startingrounds);
@@ -98,6 +109,7 @@ currentbetamount = betamount;
     }
     function rolldice(){
       canchangebet = false;
+      document.getElementById(crapsrolldiceanimationcontainer).style.display="block"
       document.getElementById(crapsrollbutton).style.display="none"
       const dicerollelement = document.getElementById(crapsrolldiceanimationcontainer);
         // create the roll animation (library will insert its DOM into the container)
@@ -125,7 +137,9 @@ const sum = diceresult.reduce((partialsum , a) => partialsum + a, 0);
 
 if (sum % 2 === 1 ){
   diceresult = bets.odd;
-    }
+} else {
+  diceresult = bets.even;
+}
    setroundsvalue(currentrounds + 1)
    let roundfinishmessage = ""
     if (diceresult !== currentbet){
@@ -144,7 +158,12 @@ if (sum % 2 === 1 ){
      document.getElementById(crapsroundfinishgridcontainer).style.display="block"
      document.getElementById(crapsroundfinishmessage).innerHTML = roundfinishmessage
   }
-
+function exitgame (){
+  alert("after playing " + currentrounds + " rounds, you are exiting the game with $" + currentmoney + " . Thank you for playing!");
+hidemaingamesection() 
+showegistrationpane()
+document.getElementById(crapsgameinputid).value = ""
+}
 
 
 
