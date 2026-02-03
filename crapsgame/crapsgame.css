@@ -141,6 +141,160 @@ cursor: pointer;
    font-weight: bold;
 }
 
+
+ #craps-game-registration{ 
+ margin-top: calc(var(--height-scale) * 0.15);
+ font-size: calc(var(--game-title-size) * 0.5);
+text-align: center;
+
+}
+.craps-game-input-reg{
+    background: none;
+    border: none;
+    border-bottom: solid white 1px;
+    color: white;
+    margin: calc(var(--height-scale) * 0.055) 0;
+    text-align: center;
+    font-size: calc(var(--game-title-size) * 0.5);
+}
+.craps-game-input-reg:focus{
+    outline: none;
+}
+
+.craps-game-button:hover{
+    background-color: white;
+    color: rgb(169, 37, 45);
+    cursor: pointer;
+}
+#craps-game-main-section{
+    display: none;
+   height: 100%;
+   
+   
+}
+.craps-game-main-section-stats{
+    font-size:calc(var(--height-scale) * 0.05);
+    text-align: center;
+    margin-top :calc(var(--height-scale) * 0.15);
+}
+#craps-stats-money{
+    font-size:calc(var(--height-scale) * 0.12);
+    margin-top :calc(var(--height-scale) * 0.04); 
+}
+.craps-on-table-container{
+     margin-top :calc(var(--height-scale) * 0.18);
+      font-size :calc(var(--height-scale) * 0.05);
+     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--height-scale) * 0.04);
+    padding: 0 0.75rem;
+    width: 100%;
+}
+.craps-round-manager{
+    position: absolute;
+    bottom :calc(var(--height-scale) * 0.05);
+    width : 100%;
+    text-align: center;
+    font-size:calc(var(--height-scale) * 0.06);
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+#craps-next-round-disabled-button{
+    background-color: rgba(0 ,0 ,0 ,0.5);
+    color: grey;
+}
+
+
+#craps-next-round-disabled-button:hover{
+   cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Responsive adjustments for small screens to prevent layout clashes */
 @media (max-width: 600px) {
     :root{
@@ -214,153 +368,6 @@ cursor: pointer;
     }
 
 }
-
- #craps-game-registration{ 
- margin-top: calc(var(--height-scale) * 0.15);
- font-size: calc(var(--game-title-size) * 0.5);
-text-align: center;
-
-}
-.craps-game-input-reg{
-    background: none;
-    border: none;
-    border-bottom: solid white 1px;
-    color: white;
-    margin: calc(var(--height-scale) * 0.055) 0;
-    text-align: center;
-    font-size: calc(var(--game-title-size) * 0.5);
-}
-.craps-game-input-reg:focus{
-    outline: none;
-}
-
-.craps-game-button:hover{
-    background-color: white;
-    color: rgb(169, 37, 45);
-    cursor: pointer;
-}
-#craps-game-main-section{
-    display: none;
-   height: 100%;
-   
-   
-}
-.craps-game-main-section-stats{
-    font-size:calc(var(--height-scale) * 0.05);
-    text-align: center;
-    margin-top :calc(var(--height-scale) * 0.15);
-}
-#craps-stats-money{
-    font-size:calc(var(--height-scale) * 0.12);
-    margin-top :calc(var(--height-scale) * 0.04); 
-}
-.craps-on-table-container{
-     margin-top :calc(var(--height-scale) * 0.18);
-      font-size :calc(var(--height-scale) * 0.05);
-     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: calc(var(--height-scale) * 0.04);
-    padding: 0 0.75rem;
-    width: 100%;
-}
-.craps-round-manager{
-    position: absolute;
-    bottom :calc(var(--height-scale) * 0.05);
-    width : 100%;
-    text-align: center;
-    font-size:calc(var(--height-scale) * 0.06);
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

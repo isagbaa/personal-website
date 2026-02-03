@@ -21,6 +21,8 @@
  const crapsbettinggridcontainer="craps-betting-grid-conatiner";
  const crapsroundfinishgridcontainer="craps-round-finish-grid-conatiner";
  const crapsroundfinishmessage="craps-round-finish-message";
+ const crapsnextrounddisabledbutton="craps-next-round-disabled-button";
+ const crapsnextroundbutton="craps-next-round-button";
  let currentrounds = startingrounds;
 let currentmoney = startingmoney;
 let currentbet = bets.even;
@@ -58,7 +60,8 @@ let canchangebet = true;
    
     function setupfirstround(){
       document.getElementById(crapsstatsuser).innerHTML = ' ' + crapsusername;
-      
+      document.getElementById(crapsnextrounddisabledbutton).style.display="none"
+      document.getElementById(crapsnextroundbutton).style.display="block"
       setmoneyvalue(startingmoney);
       setroundsvalue(startingrounds);
       beteven();
@@ -67,6 +70,8 @@ let canchangebet = true;
 
     }
      function setupNextround(){
+ 
+
       document.getElementById(crapsrolldiceanimationcontainer).style.display="none"
       document.getElementById(crapsroundfinishgridcontainer).style.display="none"
       document.getElementById(crapsrollbutton).style.display="block"
@@ -156,6 +161,8 @@ if (sum % 2 === 1 ){
     }
     if (currentmoney === 0){
     roundfinishmessage = "YOU ARE OUT"
+    document.getElementById(crapsnextrounddisabledbutton).style.display="block"
+    document.getElementById(crapsnextroundbutton).style.display="none"
     }
 
      document.getElementById(crapsbettinggridcontainer).style.display="none"
