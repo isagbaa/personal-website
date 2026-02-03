@@ -57,20 +57,24 @@ let canchangebet = true;
     }
    
     function setupfirstround(){
-      // Simple, safe display of username as plain text
-      
-      document.getElementById(crapsrolldiceanimationcontainer).style.display="none"
-      document.getElementById(crapsroundfinishgridcontainer).style.display="none"
-      document.getElementById(crapsrollbutton).style.display="block"
-      document.getElementById(crapsbettinggridcontainer).style.display="block"
       document.getElementById(crapsstatsuser).innerHTML = ' ' + crapsusername;
-      canchangebet = true;
       
       setmoneyvalue(startingmoney);
       setroundsvalue(startingrounds);
       beteven();
       setbetamount(minimumbet);
+      setupNextround()
+
     }
+     function setupNextround(){
+      document.getElementById(crapsrolldiceanimationcontainer).style.display="none"
+      document.getElementById(crapsroundfinishgridcontainer).style.display="none"
+      document.getElementById(crapsrollbutton).style.display="block"
+      document.getElementById(crapsbettinggridcontainer).style.display="block"
+      canchangebet = true;
+      setbetamount(minimumbet);
+    }
+
     function setmoneyvalue(money){
       currentmoney = money;
       document.getElementById(crapsstatsmoneyvalue).innerHTML = money;
@@ -164,7 +168,6 @@ hidemaingamesection()
 showegistrationpane()
 document.getElementById(crapsgameinputid).value = ""
 }
-
 
 
 
