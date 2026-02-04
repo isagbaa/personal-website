@@ -21,18 +21,16 @@
    height:var(--height-scale);
     margin: 0 auto ;
     border: solid white 2px;
-    background-image: url('../images/crapstable.jpg');
+    background-image: url('../images/moren-hsu-VLaKsTkmVhk-unsplash.jpg');
     background-size: cover;
     background-position: center ;
     position: relative;
-    /* make room at bottom so absolute round-manager doesn't overlap content */
     padding-bottom: calc(var(--height-scale) * 0.12);
 }
  #craps-game-registration{ 
  margin-top: calc(var(--height-scale) * 0.15);
  font-size: calc(var(--game-title-size) * 0.5);
 text-align: center;
-
 }
 .craps-game-input-reg{
     background: none;
@@ -46,121 +44,14 @@ text-align: center;
 .craps-game-input-reg:focus{
     outline: none;
 }
-
-.craps-game-button:hover{
-    background-color: white;
-    color: rgb(169, 37, 45);
-    cursor: pointer;
-}
-#craps-game-main-section{
-    display: none;
-   height: 100%;
-   
-   
-}
-.craps-game-main-section-stats{
-    font-size:calc(var(--height-scale) * 0.05);
-    text-align: center;
-    margin-top :calc(var(--height-scale) * 0.15);
-}
-#craps-stats-money{
-    font-size:calc(var(--height-scale) * 0.12);
-    margin-top :calc(var(--height-scale) * 0.04); 
-}
-.craps-on-table-container{
-     margin-top :calc(var(--height-scale) * 0.21);
-      font-size :calc(var(--height-scale) * 0.05);
-     text-align: center;
-     
-}
-.craps-round-manager{
-    position: absolute;
-    bottom :calc(var(--height-scale) * 0.05);
-    width : 100%;
-    text-align: center;
-    font-size:calc(var(--height-scale) * 0.06);
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
-}
-.craps-roll-dice-container{
-    width: fit-content;
-    margin: 0 auto;
-    /* make the trigger compact and centered */
-    font-size: clamp(0.8rem, calc(var(--height-scale) * 0.018), 1rem);
-    padding: 0.2rem 0.45rem;
-    text-align: center;
-    max-width: 180px; /* keep compact on large screens */
-    
-    border-radius: 6px;
-}
-.craps-roll-dice-container:hover{
-    cursor: pointer;
-   transform: scale(1.1);
-}
-#craps-roll-dice-animation-container{
-margin-top:calc(var(--height-scale) * -0.5); 
-margin-left:calc(var(--height-scale) * -0.17); 
-
-}
-.craps-round-finish-grid{
-    display: grid;
-    grid-template-columns: 33% auto 33%;
-    width : 80%;
-    margin: 0 auto;
-    border : solid white 2px;
+.craps-game-button{
+    background-color: transparent;
+    border: solid white 1px;
+    color: white;
+    padding: 10px 20px;
     border-radius: 5px;
+    font-size: inherit;
 }
-#craps-round-finish-message{
-     padding :calc(var(--height-scale) * 0.03); 
-     border-right: solid white 2px;
-    border-left: solid white 2px;
-    background-color: rgba(0,0,0,0.5);
-}
-
-
-
-.craps-bet-button , .craps-round-finish-button{
-     padding :calc(var(--height-scale) * 0.03); 
-}
-.craps-bet-button:hover , .craps-round-finish-button:hover{
-   cursor: pointer;
-   font-weight: bold;
-}
-.craps-bet-amount-container{
-     padding :calc(var(--height-scale) * 0.03); 
-     border-right: solid white 2px;
-    border-left: solid white 2px;
-    background-color: rgba(0,0,0,0.5);
-}
-#craps-user-bet-amount{
-    margin : 0 calc(var(--height-scale) * 0.03); 
-}
-.craps-user-bet-amount-change:hover{
-cursor: pointer;
-   font-weight: bold;
-}
-
-
- #craps-game-registration{ 
- margin-top: calc(var(--height-scale) * 0.15);
- font-size: calc(var(--game-title-size) * 0.5);
-text-align: center;
-
-}
-.craps-game-input-reg{
-    background: none;
-    border: none;
-    border-bottom: solid white 1px;
-    color: white;
-    margin: calc(var(--height-scale) * 0.055) 0;
-    text-align: center;
-    font-size: calc(var(--game-title-size) * 0.5);
-}
-.craps-game-input-reg:focus{
-    outline: none;
-}
-
 .craps-game-button:hover{
     background-color: white;
     color: rgb(169, 37, 45);
@@ -169,8 +60,6 @@ text-align: center;
 #craps-game-main-section{
     display: none;
    height: 100%;
-   
-   
 }
 .craps-game-main-section-stats{
     font-size:calc(var(--height-scale) * 0.05);
@@ -198,186 +87,70 @@ text-align: center;
     width : 100%;
     text-align: center;
     font-size:calc(var(--height-scale) * 0.06);
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-
+.craps-roll-dice-container{
+    width: fit-content;
+    margin: 0 auto;
+    font-size: clamp(0.8rem, calc(var(--height-scale) * 0.018), 1rem);
+    padding: 0.2rem 0.45rem;
+    text-align: center;
+    max-width: 180px;
+    border-radius: 6px;
+}
+.craps-roll-dice-container:hover{
+    cursor: pointer;
+   transform: scale(1.1);
+}
+#craps-roll-dice-animation-container{
+margin-top:calc(var(--height-scale) * -0.5); 
+margin-left:calc(var(--height-scale) * -0.17); 
+}
+.craps-round-finish-grid{
+    display: grid;
+    grid-template-columns: 33% auto 33%;
+    width : 80%;
+    margin: 0 auto;
+    border : solid white 2px;
+    border-radius: 5px;
+}
+#craps-round-finish-message{
+     padding :calc(var(--height-scale) * 0.03); 
+     border-right: solid white 2px;
+    border-left: solid white 2px;
+    background-color: rgba(0,0,0,0.5);
+}
+.craps-bet-button , .craps-round-finish-button{
+     padding :calc(var(--height-scale) * 0.03); 
+}
+.craps-bet-button:hover , .craps-round-finish-button:hover{
+   cursor: pointer;
+   font-weight: bold;
+}
+.craps-bet-amount-container{
+     padding :calc(var(--height-scale) * 0.03); 
+     border-right: solid white 2px;
+    border-left: solid white 2px;
+    background-color: rgba(0,0,0,0.5);
+}
+#craps-user-bet-amount{
+    margin : 0 calc(var(--height-scale) * 0.03); 
+}
+.craps-user-bet-amount-change:hover{
+cursor: pointer;
+   font-weight: bold;
+}
 #craps-next-round-disabled-button{
     background-color: rgba(0 ,0 ,0 ,0.5);
     color: grey;
 }
-
-
 #craps-next-round-disabled-button:hover{
    cursor: not-allowed;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Responsive adjustments for small screens to prevent layout clashes */
-@media (max-width: 600px) {
-    :root{
-        --width-scale: 95vw;
-        --height-scale: auto;
-        --game-title-size: 1.4rem;
-    }
-
-    .craps-game-container{
-        width: var(--width-scale);
-        height: auto; /* allow content to flow vertically */
-        padding: 1rem;
-        padding-bottom: 2.2rem; /* provide extra space for controls */
-    }
-
-    .craps-game-title{
-        margin-top: 1rem;
-        margin-bottom: 0.5rem;
-        font-size: var(--game-title-size);
-    }
-
-    .craps-betting-grid{
-        
-        width: 100%;
-    }
-
-    /* stack on-table controls and betting grid cleanly */
-    .craps-on-table-container{
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.6rem;
-        margin-top: 1rem;
-    }
-
-    .craps-bet-amount-container{
-        border-left: none;
-        border-right: none;
-    }
-
-    
-
-    
-    .craps-round-manager{
-        position: static; /* allow it to flow after content instead of overlapping */
-        margin-top: 0.5rem;
-    }
-
-    /* reduce some paddings to fit smaller screens */
-    .craps-bet-button, .craps-bet-amount-container{
-        padding: 0.6rem;
-    }
-    
-    /* Prevent dice animation from overlapping the betting grid on small screens
-       and push it further down so it clears stacked controls */
-    #craps-roll-dice-animation-container{
-        margin-top: 2rem; /* push animation down on phones */
-        margin-left: 0; /* remove negative offset */
-        position: relative; /* allow it to flow with document */
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        box-sizing: border-box;
-        z-index: 1;
-    }
-
-    .craps-roll-dice-container{
-        max-width: 100%;
-        margin: 0 auto;
-        transform: none; /* avoid hover-scaling pushing layout on touch */
-    }
-
-}
-
-
-
-
-
-/* Container that will hold the roll-a-die animation */
-/* Container that will hold the roll-a-die animation */
 .craps-betting-grid{
     display: grid;
-    /* fixed center column so amounts do not expand grid width */
     grid-template-columns: 1fr 180px 1fr;
     width: 80%;
     max-width: calc(var(--width-scale) - 40px);
@@ -394,7 +167,7 @@ text-align: center;
    font-weight: bold;
 }
 #craps-bet-amount-container{
-     width: 180px; /* fixed width to prevent grid growth */
+     width: 180px;
      padding :calc(var(--height-scale) * 0.03);
      border-right: solid white 2px;
     border-left: solid white 2px;
@@ -411,7 +184,6 @@ cursor: pointer;
    font-weight: bold;
 }
 
-/* Responsive adjustments for small screens to prevent layout clashes */
 @media (max-width: 600px) {
     :root{
         --width-scale: 95vw;
@@ -421,9 +193,9 @@ cursor: pointer;
 
     .craps-game-container{
         width: var(--width-scale);
-        height: auto; /* allow content to flow vertically */
+        height: auto;
         padding: 1rem;
-        padding-bottom: 2.2rem; /* provide extra space for controls */
+        padding-bottom: 2.2rem;
     }
 
     .craps-game-title{
@@ -433,12 +205,11 @@ cursor: pointer;
     }
 
     .craps-betting-grid{
-        grid-template-columns: 1fr; /* stack into a single column */
+        grid-template-columns: 1fr;
         width: 100%;
         max-width: 100%;
     }
 
-    /* stack on-table controls and betting grid cleanly */
     .craps-on-table-container{
         display: flex;
         flex-direction: column;
@@ -452,14 +223,29 @@ cursor: pointer;
         border-right: none;
     }
 
-   
     .craps-round-manager{
-        position: static; /* allow it to flow after content instead of overlapping */
+        position: static;
         margin-top: 0.5rem;
     }
 
-    /* reduce some paddings to fit smaller screens */
     .craps-bet-button, .craps-bet-amount-container{
         padding: 0.6rem;
+    }
+
+    #craps-roll-dice-animation-container{
+        margin-top: 2rem;
+        margin-left: 0;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+        z-index: 1;
+    }
+
+    .craps-roll-dice-container{
+        max-width: 100%;
+        margin: 0 auto;
+        transform: none;
     }
 }
