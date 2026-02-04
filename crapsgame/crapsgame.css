@@ -212,6 +212,89 @@ text-align: center;
 #craps-next-round-disabled-button:hover{
    cursor: not-allowed;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Responsive adjustments for small screens to prevent layout clashes */
 @media (max-width: 600px) {
     :root{
@@ -223,7 +306,6 @@ text-align: center;
     .craps-game-container{
         width: var(--width-scale);
         height: auto; /* allow content to flow vertically */
-        min-height: 70vh; /* ensure taller container on phones */
         padding: 1rem;
         padding-bottom: 2.2rem; /* provide extra space for controls */
     }
@@ -269,50 +351,20 @@ text-align: center;
     /* Prevent dice animation from overlapping the betting grid on small screens
        and push it further down so it clears stacked controls */
     #craps-roll-dice-animation-container{
-        margin-top: 0; /* reset previous offsets */
+        margin-top: 2rem; /* push animation down on phones */
         margin-left: 0; /* remove negative offset */
-        margin-bottom: 1.5rem; /* give space between animation and betting grid */
         position: relative; /* allow it to flow with document */
         display: flex;
         justify-content: center;
-        align-items: center;
         width: 100%;
-        min-height: 22vh; /* reserve vertical space so animation doesn't overlap */
         box-sizing: border-box;
-        z-index: 1; /* sit beneath betting grid (which will have higher z-index) */
+        z-index: 1;
     }
 
     .craps-roll-dice-container{
         max-width: 100%;
         margin: 0 auto;
         transform: none; /* avoid hover-scaling pushing layout on touch */
-    }
-
-    /* Make registration inputs/buttons larger on phones only (do NOT affect laptop view) */
-    #craps-game-registration{
-        font-size: 1.15rem;
-        margin-top: 1.2rem;
-        padding: 0.5rem 0.4rem;
-    }
-
-    .craps-game-input-reg{
-        font-size: 1rem;
-        width: 100%;
-        padding: 0.5rem 0.5rem;
-        margin: 0.4rem 0;
-    }
-
-    .craps-game-button{
-        width: 100%;
-        padding: 0.7rem 0.6rem;
-        font-size: 1rem;
-        border-radius: 6px;
-    }
-
-    /* Ensure betting grid overlays the dice animation on phones */
-    .craps-betting-grid{
-        position: relative;
-        z-index: 3; /* ensure betting grid overlays the dice animation */
     }
 
 }
@@ -359,4 +411,55 @@ cursor: pointer;
    font-weight: bold;
 }
 
+/* Responsive adjustments for small screens to prevent layout clashes */
+@media (max-width: 600px) {
+    :root{
+        --width-scale: 95vw;
+        --height-scale: auto;
+        --game-title-size: 1.4rem;
+    }
 
+    .craps-game-container{
+        width: var(--width-scale);
+        height: auto; /* allow content to flow vertically */
+        padding: 1rem;
+        padding-bottom: 2.2rem; /* provide extra space for controls */
+    }
+
+    .craps-game-title{
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        font-size: var(--game-title-size);
+    }
+
+    .craps-betting-grid{
+        grid-template-columns: 1fr; /* stack into a single column */
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* stack on-table controls and betting grid cleanly */
+    .craps-on-table-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+        margin-top: 1rem;
+    }
+
+    .craps-bet-amount-container{
+        border-left: none;
+        border-right: none;
+    }
+
+   
+    .craps-round-manager{
+        position: static; /* allow it to flow after content instead of overlapping */
+        margin-top: 0.5rem;
+    }
+
+    /* reduce some paddings to fit smaller screens */
+    .craps-bet-button, .craps-bet-amount-container{
+        padding: 0.6rem;
+    }
+}
