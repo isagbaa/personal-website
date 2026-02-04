@@ -20,7 +20,7 @@
  const crapsstatsmoneyvalue="craps-stats-money-value";
  const crapsstatsrounds="craps-stats-rounds";
  const crapsuserbetamount="craps-user-bet-amount";
- const crapsrollbutton="craps-roll-button"
+ const crapsrollbutton="craps-roll-button";
  const crapsrolldiceanimationcontainer="craps-roll-dice-animation-container"
  const crapsbettinggridcontainer="craps-betting-grid-conatiner";
  const crapsroundfinishgridcontainer="craps-round-finish-grid-conatiner";
