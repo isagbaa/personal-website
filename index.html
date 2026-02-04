@@ -1,0 +1,120 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./titlesection/titlesection.css" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Armata&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap">
+    <link rel="stylesheet" href="./aboutmesection/aboutmesection.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="./crapsgame/crapsgame.css">
+    <link rel="stylesheet" href="./crapsgame/utility.css">
+</head>   
+    <body>
+            <div class="main-section" id="title">
+            <h1 class="title-section-header">Isagba Ogechukwu Gerard </h1>
+            <p class="title-section-subtitle"> Software Engineer</p>
+            <button class="title-section-button" onclick="makedream()">more info</button>  <div class="dreams-container"></div>
+        </div>
+        <div class="misc-section" id="aboutme">
+            <div class="text-block-container">
+                <h1>About Me</h1>
+                <p class="about-me-section-description">Hello! I'm Gerard, a passionate software engineer
+                     with a knack for creating innovative solutions. With a background in computer science,
+                      I specialize in full-stack development and have experience working with various 
+                      programming languages and frameworks. When I'm not coding, I enjoy hiking, reading tech blogs, and exploring new technologies. 
+                      I'm always eager to learn and take on new challenges in the tech world.</p>
+            </div>
+            <div class="about-icons">
+               <a href="" target="_blank"><i class=" abouticon fa-brands fa-square-whatsapp"></i></a>
+                <a href="" target="_blank"><i class="abouticon fa-solid fa-phone"></i></a>
+                <a href="" target="_blank"><i class="abouticon fa-brands fa-linkedin"></i></a>
+                <a href="mailto:gerardisagba17@gmail.com" target="_blank"><i class="abouticon fa-solid fa-envelope"></i></a>
+                <!--add your cv later watch the last video in part 3-->
+            </div>
+        </div>
+        <div class="main-section" id="craps-game">
+            <div class="craps-game-title">Craps Casino Game </div>
+             <div class="craps-game-container">
+               <div id="craps-game-registration">
+                <div>Enter Username 
+                <div>
+                <input class="craps-game-input-reg" type="text" id="craps-game-input-id" >
+                </div>
+                    <div>
+                    <button class="craps-game-button" onclick="registercrapsplayer()">Continue</button>
+                    </div>
+                </div>
+               </div>
+               <div id="craps-game-main-section">
+                <div class="craps-game-main-section-stats">
+
+                <div>Welcome,<span id ="craps-stats-user"></span></div>
+
+                <div id ="craps-stats-money">$<span id ="craps-stats-money-value"></span></div>
+
+                <div>Rounds: <span id ="craps-stats-rounds"></span></div>
+                </div>
+                <div class = "craps-on-table-container">
+                <div id ="craps-roll-button" class = "craps-roll-dice-container no-select" onclick="rolldice()">roll dice <i class="fa-solid fa-dice"></i></div>
+                <div id="craps-roll-dice-animation-container">
+                
+                </div>
+                </div>
+                <div class="craps-round-manager no-select">
+                <div id ="craps-betting-grid-conatiner">
+                <div class ="craps-betting-grid no-select">
+                <div class = "craps-bet-button" id ="EVEN" onclick = "beteven()">EVEN</div>
+                
+                <div class = "craps-bet-amount-container">
+                <span class="craps-user-bet-amount-change" onclick="decreasebetamount()">-</span>
+                 <span id = "craps-user-bet-amount" >$100</span>
+                  <span class="craps-user-bet-amount-change" onclick="increasebetamount()">+</span>
+                </div>
+                <div class = "craps-bet-button" id ="ODD" onclick = "betodd()">ODD</div>
+                 </div>
+             </div>
+              <div id ="craps-round-finish-grid-conatiner">
+                <div class ="craps-round-finish-grid no-select">
+                <div id = "craps-next-round-button" class = "craps-round-finish-button" onclick="setupNextround()">NEXT ROUND</div> 
+                <div id = "craps-next-round-disabled-button" class= "craps-round-finish-button">NEXT ROUND</div>
+                <div  id = "craps-round-finish-message">
+                YOU WIN
+                </div>
+                <div class = "craps-round-finish-button" onclick="exitgame()">EXIT GAME</div>
+                 </div>
+             </div>
+             </div>
+             </div>
+             </div>
+        </div>
+    </body>
+    
+</html>
+
+<style>
+    * {
+  box-sizing: border-box;
+  font-family: 'Armata';
+}
+
+html, body{
+margin: 0px;
+padding: 0px;
+    }
+
+   .main-section{
+    padding-top: 70px;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+
+   }
+</style>
+ <script src="./crapsgame/crapsgame.js"></script>
+ <script type="text/javascript" src="https://unpkg.com/roll-a-die@2.0.1/dist/roll-a-die.js"></script>
+<script>
+    function makedream(){
+        document.body.style.background= 'URL("https://media.tenor.com/nANqORN7qhQAAAAM/explosion-explode.gif")';
+document.getElementById("title").style.visibility="hidden"
+    }
+   
+</script>
