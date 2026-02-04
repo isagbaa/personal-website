@@ -180,6 +180,7 @@ if (sum % 2 === 1 ){
      showelement(crapsroundfinishgridcontainer)
      document.getElementById(crapsroundfinishmessage).innerHTML = roundfinishmessage
   }
+  
   //
 function exitgame (){
   alert("after playing " + currentrounds + " rounds, you are exiting the game with $" + currentmoney + " . Thank you for playing!");
