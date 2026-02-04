@@ -6,7 +6,7 @@
  
  const bets ={
   even : "EVEN",
-  odd : "ODD"
+  odd : "ODD",
  }
  const minimumbet = 100;
  const hidedicedelayms = 100000;
