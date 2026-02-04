@@ -6,8 +6,10 @@
 }
 #craps-game{
     background-image: url('../images/michal-parzuchowski-U8n_O7rEq7o-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: white;
-    background-position: center ;
     padding: 1px;
 }
 .craps-game-title{
@@ -23,7 +25,8 @@
     border: solid white 2px;
     background-image: url('../images/moren-hsu-VLaKsTkmVhk-unsplash.jpg');
     background-size: cover;
-    background-position: center ;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
     padding-bottom: calc(var(--height-scale) * 0.12);
 }
