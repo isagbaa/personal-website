@@ -3,11 +3,15 @@
  //craps game settings 
  const startingmoney = 1000;
  const startingrounds = 0;
+ 
  const bets ={
   even : "EVEN",
   odd : "ODD"
  }
  const minimumbet = 100;
+ const hidedicedelayms = 100000;
+ const numdicetoroll = 2;
+ const processdiceresultdelayms = 1800;
  //html element ids
  const crapsgameinputid = "craps-game-input-id";
  const crapsgameregistration = "craps-game-registration";
@@ -28,66 +32,74 @@ let currentmoney = startingmoney;
 let currentbet = bets.even;
 let currentbetamount = minimumbet;
 let canchangebet = true;
+
+// HTML MANIPULATION FUNCTIONS
+  
+  function showelement(elementid){
+    document.getElementById(elementid).style.display="block";
+  }
+   function hideelement(elementid){
+    document.getElementById(elementid).style.display="none";
+  }
+    function removeregistrationpane(){
+        hideelement(crapsgameregistration);
+    }
+    function showegistrationpane(){
+        showelement(crapsgameregistration);
+    }
+    function showmaingamesection(){
+      showelement(crapsgamemainsection);
+    }
+     function hidemaingamesection(){
+      hideelement(crapsgamemainsection);
+    }
+   
+
+// GAME STARTING POINT FUNCTIONS
  function registercrapsplayer(){
   crapsusername = document.getElementById(crapsgameinputid).value.trim();
-   
-  
-  
    if (/^[0-9]/.test(crapsusername) ||  /^[_.]/.test(crapsusername) || crapsusername.length < 5 || /\s/.test(crapsusername) || /[^a-zA-Z0-9_.]/.test(crapsusername)) {
     alert("username must be more than 5 characters long, alphanumeric with underscore and dot only, cannot start with a digit or special symbol, no spaces allowed");
     }
     else{
        removeregistrationpane()
         showmaingamesection()
-
-      setupfirstround()
+        setupfirstround()
    }
-   
-
   }
-    function removeregistrationpane(){
-        document.getElementById(crapsgameregistration).style.display="none"
-    }
-    function showegistrationpane(){
-        document.getElementById(crapsgameregistration).style.display="block"
-    }
-    function showmaingamesection(){
-      document.getElementById(crapsgamemainsection).style.display="block"
-    }
-     function hidemaingamesection(){
-      document.getElementById(crapsgamemainsection).style.display="none"
-    }
-   
+
+// MANAGING ROUNDS
     function setupfirstround(){
       document.getElementById(crapsstatsuser).innerHTML = ' ' + crapsusername;
-      document.getElementById(crapsnextrounddisabledbutton).style.display="none"
-      document.getElementById(crapsnextroundbutton).style.display="block"
+      hideelement(crapsnextrounddisabledbutton)
+      showelement(crapsnextroundbutton)
       setmoneyvalue(startingmoney);
       setroundsvalue(startingrounds);
       beteven();
       setbetamount(minimumbet);
       setupNextround()
-
     }
      function setupNextround(){
- 
-
-      document.getElementById(crapsrolldiceanimationcontainer).style.display="none"
-      document.getElementById(crapsroundfinishgridcontainer).style.display="none"
-      document.getElementById(crapsrollbutton).style.display="block"
-      document.getElementById(crapsbettinggridcontainer).style.display="block"
+      hideelement(crapsrolldiceanimationcontainer)
+      hideelement(crapsroundfinishgridcontainer)
+      showelement(crapsrollbutton)
+      showelement(crapsbettinggridcontainer)
       canchangebet = true;
       setbetamount(minimumbet);
     }
 
+// MANAGING SCORE SETTINGS 
     function setmoneyvalue(money){
       currentmoney = money;
       document.getElementById(crapsstatsmoneyvalue).innerHTML = money;
     }
+
     function setroundsvalue(rounds){
       currentrounds = rounds;
       document.getElementById(crapsstatsrounds).innerHTML = rounds;
     } 
+
+// MANAGE USER BET SELECTION
     function beteven(){
       choosebet(bets.even);
     }
@@ -101,7 +113,6 @@ currentbet = bet;
        const deselectBet = bet === bets.even ? bets.odd : bets.even;
         document.getElementById(deselectBet).style.backgroundColor= "transparent";
       }
-      
     }
     function increasebetamount(){
 setbetamount(Math.min(currentbetamount + minimumbet, currentmoney));
@@ -114,15 +125,15 @@ setbetamount(Math.max(currentbetamount - minimumbet, minimumbet));
 currentbetamount = betamount;
       document.getElementById(crapsuserbetamount).innerHTML = "$" + betamount;
       }
-      
     }
+    //ROLL DICE AND PROCESS RESULT
     function rolldice(){
       canchangebet = false;
-      document.getElementById(crapsrolldiceanimationcontainer).style.display="block"
-      document.getElementById(crapsrollbutton).style.display="none"
+      showelement(crapsrolldiceanimationcontainer)
+      hideelement(crapsrollbutton)
       const dicerollelement = document.getElementById(crapsrolldiceanimationcontainer);
         // create the roll animation (library will insert its DOM into the container)
-        rollADie({ element: dicerollelement, numberOfDice: 2, callback: delayeddiceprocessingresult , delay : 100000});
+        rollADie({ element: dicerollelement, numberOfDice: numdicetoroll, callback: delayeddiceprocessingresult , delay : hidedicedelayms});
        
         //requestAnimationFrame(() => setTimeout(adjustDiceLayout, 10000000));
     }
@@ -137,7 +148,7 @@ document.addEventListener("resize", formatdicescale);
       document.getElementById(crapsrolldiceanimationcontainer).style.transform = "scale(" + scale + ")";
     }
     function delayeddiceprocessingresult(diceresult){
-      setTimeout( function() {processdiceresult(diceresult);}, 1800);
+      setTimeout( function() {processdiceresult(diceresult);}, processdiceresultdelayms);
     }
     function processdiceresult(diceresult){
 //currentbet=useres bet
@@ -161,14 +172,16 @@ if (sum % 2 === 1 ){
     }
     if (currentmoney === 0){
     roundfinishmessage = "YOU ARE OUT"
-    document.getElementById(crapsnextrounddisabledbutton).style.display="block"
-    document.getElementById(crapsnextroundbutton).style.display="none"
+    showelement(crapsnextrounddisabledbutton)
+    hideelement(crapsnextroundbutton)
     }
 
-     document.getElementById(crapsbettinggridcontainer).style.display="none"
-     document.getElementById(crapsroundfinishgridcontainer).style.display="block"
+     hideelement(crapsbettinggridcontainer)
+     showelement(crapsroundfinishgridcontainer)
      document.getElementById(crapsroundfinishmessage).innerHTML = roundfinishmessage
   }
+
+  //EXIT GAME
 function exitgame (){
   alert("after playing " + currentrounds + " rounds, you are exiting the game with $" + currentmoney + " . Thank you for playing!");
 hidemaingamesection() 
