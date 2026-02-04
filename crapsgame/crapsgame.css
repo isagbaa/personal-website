@@ -62,7 +62,11 @@ text-align: center;
 }
 #craps-game-main-section{
     display: none;
-   height: 100%;
+    height: 100%;
+    background-image: url('../images/moren-hsu-VLaKsTkmVhk-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .craps-game-main-section-stats{
     font-size:calc(var(--height-scale) * 0.05);
