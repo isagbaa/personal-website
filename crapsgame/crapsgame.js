@@ -6,7 +6,7 @@
  
  const bets ={
   even : "EVEN",
-  odd : "ODD",
+  odd : "ODD"
  }
  const minimumbet = 100;
  const hidedicedelayms = 100000;
@@ -20,7 +20,7 @@
  const crapsstatsmoneyvalue="craps-stats-money-value";
  const crapsstatsrounds="craps-stats-rounds";
  const crapsuserbetamount="craps-user-bet-amount";
- const crapsrollbutton="craps-roll-button";
+ const crapsrollbutton="craps-roll-button"
  const crapsrolldiceanimationcontainer="craps-roll-dice-animation-container"
  const crapsbettinggridcontainer="craps-betting-grid-conatiner";
  const crapsroundfinishgridcontainer="craps-round-finish-grid-conatiner";
@@ -126,7 +126,7 @@ currentbetamount = betamount;
       document.getElementById(crapsuserbetamount).innerHTML = "$" + betamount;
       }
     }
-    //ROLL DICE AND PROCESS RESULTs
+    //ROLL DICE AND PROCESS RESULT
     function rolldice(){
       canchangebet = false;
       showelement(crapsrolldiceanimationcontainer)
@@ -180,8 +180,8 @@ if (sum % 2 === 1 ){
      showelement(crapsroundfinishgridcontainer)
      document.getElementById(crapsroundfinishmessage).innerHTML = roundfinishmessage
   }
-
-  //EXIT GAME
+  
+  //
 function exitgame (){
   alert("after playing " + currentrounds + " rounds, you are exiting the game with $" + currentmoney + " . Thank you for playing!");
 hidemaingamesection() 
