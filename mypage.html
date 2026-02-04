@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="./crapsgame/crapsgame.css">
     <link rel="stylesheet" href="./crapsgame/utility.css">
+
 </head>   
     <body>
             <div class="main-section" id="title">
@@ -32,9 +33,58 @@
             </div>
         </div>
         <div class="main-section" id="craps-game">
-            <h1 class="craps-game-title">Craps Casino Game </h1>
+            <div class="craps-game-title">Craps Casino Game </div>
              <div class="craps-game-container">
+               <div id="craps-game-registration">
+                <div>Enter Username 
+                <div>
+                <input class="craps-game-input-reg" type="text" id="craps-game-input-id" >
+                </div>
+                    <div>
+                    <button class="craps-game-button" onclick="registercrapsplayer()">Continue</button>
+                    </div>
+                </div>
+               </div>
+               <div id="craps-game-main-section">
+                <div class="craps-game-main-section-stats">
 
+                <div>Welcome,<span id ="craps-stats-user"></span></div>
+
+                <div id ="craps-stats-money">$<span id ="craps-stats-money-value"></span></div>
+
+                <div>Rounds: <span id ="craps-stats-rounds"></span></div>
+                </div>
+                <div class = "craps-on-table-container">
+                <div id ="craps-roll-button" class = "craps-roll-dice-container no-select" onclick="rolldice()">roll dice <i class="fa-solid fa-dice"></i></div>
+                <div id="craps-roll-dice-animation-container">
+                
+                </div>
+                </div>
+                <div class="craps-round-manager no-select">
+                <div id ="craps-betting-grid-conatiner">
+                <div class ="craps-betting-grid no-select">
+                <div class = "craps-bet-button" id ="EVEN" onclick = "beteven()">EVEN</div>
+                
+                <div class = "craps-bet-amount-container">
+                <span class="craps-user-bet-amount-change" onclick="decreasebetamount()">-</span>
+                 <span id = "craps-user-bet-amount" >$100</span>
+                  <span class="craps-user-bet-amount-change" onclick="increasebetamount()">+</span>
+                </div>
+                <div class = "craps-bet-button" id ="ODD" onclick = "betodd()">ODD</div>
+                 </div>
+             </div>
+              <div id ="craps-round-finish-grid-conatiner">
+                <div class ="craps-round-finish-grid no-select">
+                <div id = "craps-next-round-button" class = "craps-round-finish-button" onclick="setupNextround()">NEXT ROUND</div> 
+                <div id = "craps-next-round-disabled-button" class= "craps-round-finish-button">NEXT ROUND</div>
+                <div  id = "craps-round-finish-message">
+                YOU WIN
+                </div>
+                <div class = "craps-round-finish-button" onclick="exitgame()">EXIT GAME</div>
+                 </div>
+             </div>
+             </div>
+             </div>
              </div>
         </div>
     </body>
