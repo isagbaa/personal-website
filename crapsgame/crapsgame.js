@@ -126,7 +126,7 @@ currentbetamount = betamount;
       document.getElementById(crapsuserbetamount).innerHTML = "$" + betamount;
       }
     }
-    //ROLL DICE AND PROCESS RESULTs
+    //ROLL DICE AND PROCESS RESULT
     function rolldice(){
       canchangebet = false;
       showelement(crapsrolldiceanimationcontainer)
@@ -180,8 +180,8 @@ if (sum % 2 === 1 ){
      showelement(crapsroundfinishgridcontainer)
      document.getElementById(crapsroundfinishmessage).innerHTML = roundfinishmessage
   }
-
-  //EXIT GAME
+  
+  //
 function exitgame (){
   alert("after playing " + currentrounds + " rounds, you are exiting the game with $" + currentmoney + " . Thank you for playing!");
 hidemaingamesection() 
