@@ -126,7 +126,7 @@ currentbetamount = betamount;
       document.getElementById(crapsuserbetamount).innerHTML = "$" + betamount;
       }
     }
-    //ROLL DICE AND PROCESS RESULT
+    //ROLL DICE AND PROCESS RESULTs
     function rolldice(){
       canchangebet = false;
       showelement(crapsrolldiceanimationcontainer)
