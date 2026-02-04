@@ -63,10 +63,11 @@ text-align: center;
 #craps-game-main-section{
     display: none;
     height: 100%;
-    background-image: url('../images/moren-hsu-VLaKsTkmVhk-unsplash.jpg');
+    background-image: url('../images/jean-philippe-delberghe-9XAnXWHu9_4-unsplash.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .craps-game-main-section-stats{
     font-size:calc(var(--height-scale) * 0.05);
