@@ -27,7 +27,12 @@
     position: relative;
     overflow: hidden;
     padding-bottom: calc(var(--height-scale) * 0.12);
-    /* background-image removed from container so the main-section controls the visual background */
+    /* container background: ensure it fills the whole container without overflowing */
+    background-image: url('../images/tejas-kotha-30j2oKD9Cfo-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
     
 }
  #craps-game-registration{ 
@@ -252,6 +257,23 @@ cursor: pointer;
         max-width: 100%;
         margin: 0 auto;
         transform: none;
+    }
+
+    /* enlarge registration UI on phones for better usability */
+    #craps-game-registration{
+        font-size: 1.05rem;
+        padding: 0.8rem 1rem;
+        margin-top: 1rem;
+    }
+    .craps-game-input-reg{
+        font-size: 1rem;
+        padding: 0.5rem 0.6rem;
+        width: 90%;
+        max-width: 420px;
+    }
+    .craps-game-button{
+        padding: 0.85rem 1.2rem;
+        font-size: 1rem;
     }
 
     /* Mobile-only layout: ensure dice animation sits between the rounds (stats) and the betting grid */
