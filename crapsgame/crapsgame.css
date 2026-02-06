@@ -300,4 +300,10 @@ cursor: pointer;
         justify-content: center;
     }
     .craps-round-manager{ order: 3; }
+    
+    /* Add space below animation to prevent overlap with finish grid on mobile */
+    #craps-roll-dice-animation-container {
+        margin-bottom: 2rem !important;
+        padding-bottom: 1rem;
+    }
 }

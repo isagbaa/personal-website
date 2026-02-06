@@ -131,6 +131,7 @@ currentbetamount = betamount;
       canchangebet = false;
       showelement(crapsrolldiceanimationcontainer)
       hideelement(crapsrollbutton)
+      hideelement(crapsbettinggridcontainer)
       const dicerollelement = document.getElementById(crapsrolldiceanimationcontainer);
         // create the roll animation (library will insert its DOM into the container)
         rollADie({ element: dicerollelement, numberOfDice: numdicetoroll, callback: delayeddiceprocessingresult , delay : hidedicedelayms});
